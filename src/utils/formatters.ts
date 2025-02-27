@@ -14,16 +14,16 @@ export const formatPersianNumber = (num: number): string => {
   return toPersianNumber(formatNumber(num));
 };
 
-// Format currency in IRR
-export const formatCurrency = (amount: number, currency: string = 'IRR'): string => {
+// Format currency in IRT
+export const formatCurrency = (amount: number, currency: string = 'IRT'): string => {
   if (currency === 'USD') {
     return `دلار ${formatNumber(Math.round(amount * 100) / 100)}`;
   }
   return `${formatNumber(Math.round(amount))} تومان`;
 };
 
-// Format currency in IRR and convert to Persian
-export const formatPersianCurrency = (amount: number, currency: string = 'IRR'): string => {
+// Format currency in IRT and convert to Persian
+export const formatPersianCurrency = (amount: number, currency: string = 'IRT'): string => {
   if (currency === 'USD') {
     return `$${formatPersianNumber(Math.round(amount * 100) / 100)}`;
   }

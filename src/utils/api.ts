@@ -23,16 +23,15 @@ export const fetchCurrentGoldPrice = async (): Promise<GoldPrice> => {
       throw new Error('Could not find 24k gold price in API response');
     }
     
-    // Convert price from Toman to Rial (1 Toman = 10 Rials)
-    const priceInRials = gram24kGold.price ;
+    
     
     return {
-      price: priceInRials,
-      currency: 'IRR',
+      price: gram24kGold.price,
+      currency: 'IRT',
       timestamp: Date.now(),
       prices: {
-        gold24k: gram24kGold.price * 10,
-        gold18k: gram18kGold ? gram18kGold.price * 10 : null,
+        gold24k: gram24kGold.price ,
+        gold18k: gram18kGold ? gram18kGold.price  : null,
         usd: usdCurrency ? usdCurrency.price : null
       }
     };
@@ -52,7 +51,7 @@ const fallbackToMockData = (): GoldPrice => {
   
   return {
     price: mockPrice24k,
-    currency: 'IRR',
+    currency: 'IRT',
     timestamp: Date.now(),
     prices: {
       gold24k: mockPrice24k,

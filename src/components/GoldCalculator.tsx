@@ -25,7 +25,7 @@ import {
   formatCurrency,
 } from "../utils/formatters";
 import { saveCalculation, saveLastKnownPrice, getLastKnownPrice } from "../utils/storage";
-import PriceHistoryChart from "./PriceHistoryChart";
+
 import SavedCalculations from "./SavedCalculations";
 import CaratCalculator from "./CaratCalculator";
 
@@ -399,7 +399,7 @@ const GoldCalculator: React.FC = () => {
                         <td className="p-2 border border-amber-200">طلای ۲۴ عیار</td>
                         <td className="p-2 border border-amber-200">
                           {goldPrices.gold24k
-                            ? formatPersianNumber(Math.round(goldPrices.gold24k / 10))
+                            ? formatPersianNumber(Math.round(goldPrices.gold24k ))
                             : "..."}
                         </td>
                       </tr>
@@ -407,7 +407,7 @@ const GoldCalculator: React.FC = () => {
                         <td className="p-2 border border-amber-200">طلای ۱۸ عیار</td>
                         <td className="p-2 border border-amber-200">
                           {goldPrices.gold18k
-                            ? formatPersianNumber(Math.round(goldPrices.gold18k / 10))
+                            ? formatPersianNumber(Math.round(goldPrices.gold18k ))
                             : "..."}
                         </td>
                       </tr>
