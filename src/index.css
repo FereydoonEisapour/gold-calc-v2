@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #c9a959;
+  --secondary-color: #8a6d3b;
+  --accent-color: #d4af37;
+  --background-color: #f8f4e9;
+  --text-color: #4a4a4a;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.persian-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a959' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #f6e27a 0%, #d4af37 50%, #c9a959 100%);
+}
+
+.persian-border {
+  border-image: linear-gradient(45deg, #d4af37, #8a6d3b) 1;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.rtl-chart {
+  direction: ltr;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300;
+  }
+  
+  .input-field {
+    @apply w-full p-3 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-amber-200;
+  }
+  
+  .tooltip {
+    @apply absolute invisible group-hover:visible bg-amber-800 text-white text-sm rounded p-2 -mt-16 z-10 w-48 text-center;
+  }
+}
